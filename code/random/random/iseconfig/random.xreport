@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-10-30T09:48:59</DateModified>
+  <DateModified>2024-11-08T18:14:21</DateModified>
   <ModuleName>random</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/random/random/iseconfig/random.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/random/random</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/random/random\</ImplementationReportsDirectory>
   <DateInitialized>2024-10-30T09:48:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

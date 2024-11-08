@@ -2,14 +2,14 @@ Command line:
    random_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  10207
+     -socket  6986
 
-Wed Oct 30 09:57:16 2024
+Sun Nov 03 12:29:27 2024
 
 
- Elaboration Time: 0.046875 sec
+ Elaboration Time: 0.078125 sec
 
- Current Memory Usage: 5155.53 Meg
+ Current Memory Usage: 5155.48 Meg
 
  Total Signals          : 17
  Total Nets             : 32
@@ -20,9 +20,9 @@ Wed Oct 30 09:57:16 2024
  Total Traceable Variables  : 21
  Total Scalar Nets and Variables : 130
 
- Total Simulation Time: 0.0625 sec
+ Total Simulation Time: 0.140625 sec
 
- Current Memory Usage: 5470.11 Meg
+ Current Memory Usage: 4683.62 Meg
 
-Wed Oct 30 09:57:59 2024
+Sun Nov 03 12:32:54 2024
 

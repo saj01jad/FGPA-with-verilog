@@ -1,27 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   09:21:19 10/30/2024
-// Design Name:   fourBitAdder
-// Module Name:   C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/4bit adder/fourBitAdder/fourBitAdder_tb.v
-// Project Name:  fourBitAdder
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: fourBitAdder
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 module fourBitAdder_tb;
 
 	// Inputs

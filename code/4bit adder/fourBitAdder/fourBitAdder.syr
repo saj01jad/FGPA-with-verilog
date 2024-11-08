@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: fourBitAdder.prj
 
@@ -115,12 +115,8 @@ Parsing module <fourBitAdder>.
 =========================================================================
 
 Elaborating module <fourBitAdder>.
-WARNING:HDLCompiler:604 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\4bit adder\fourBitAdder\fourBitAdder.v" Line 14: Module instantiation should have an instance name
 
 Elaborating module <fullAdder>.
-WARNING:HDLCompiler:604 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\4bit adder\fourBitAdder\fourBitAdder.v" Line 15: Module instantiation should have an instance name
-WARNING:HDLCompiler:604 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\4bit adder\fourBitAdder\fourBitAdder.v" Line 16: Module instantiation should have an instance name
-WARNING:HDLCompiler:604 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\4bit adder\fourBitAdder\fourBitAdder.v" Line 17: Module instantiation should have an instance name
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -277,8 +273,8 @@ Delay:               6.494ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.222   0.961  a_1_IBUF (a_1_IBUF)
-     LUT5:I0->O            3   0.203   0.755  _i000002/cout1 (carry<1>)
-     LUT5:I3->O            1   0.203   0.579  _i000004/cout1 (cout_OBUF)
+     LUT5:I0->O            3   0.203   0.755  fa1/cout1 (carry<1>)
+     LUT5:I3->O            1   0.203   0.579  fa3/cout1 (cout_OBUF)
      OBUF:I->O                 2.571          cout_OBUF (cout)
     ----------------------------------------
     Total                      6.494ns (4.199ns logic, 2.295ns route)
@@ -292,14 +288,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.33 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.63 secs
  
 --> 
 
 Total memory usage is 4487880 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
