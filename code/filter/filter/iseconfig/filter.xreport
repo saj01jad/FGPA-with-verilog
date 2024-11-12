@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-11-08T18:50:08</DateModified>
+  <DateModified>2024-11-09T13:08:03</DateModified>
   <ModuleName>filter</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/filter/filter/iseconfig/filter.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/filter/filter</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/filter/filter\</ImplementationReportsDirectory>
   <DateInitialized>2024-11-08T18:50:08</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
