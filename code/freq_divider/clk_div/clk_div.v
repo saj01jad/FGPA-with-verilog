@@ -1,0 +1,35 @@
+`timescale 1ns / 1ps
+module clock_divider(
+    input clk_100MHz,  // ???? ????? 100MHz
+    output reg clk_50MHz, // ???? ????? 50MHz
+    output reg clk_10MHz,  // ???? ????? 10MHz
+	 input rst // ????
+);
+
+reg [0:0] counter_50MHz = 0;  // ??????? ???? 50MHz
+reg [3:0] counter_10MHz = 0;  // ??????? ???? 10MHz
+
+always @(posedge clk_100MHz or posedge rst) begin
+	 if (rst == 1) begin
+		clk_50MHz <= 0;
+		clk_10MHz <= 0;
+	 end
+	 else begin
+		 // ????? ???? ???? 50MHz
+		 counter_50MHz <= counter_50MHz + 1;
+		 if (counter_50MHz == 1) begin
+			  clk_50MHz <= ~clk_50MHz;
+			  counter_50MHz <= 0;
+		 end
+		 
+		 // ????? ???? ???? 10MHz
+		 counter_10MHz <= counter_10MHz + 1;
+		 if (counter_10MHz == 9) begin
+			  clk_10MHz <= ~clk_10MHz;
+			  counter_10MHz <= 0;
+		 end
+	 end
+end
+
+endmodule
+
