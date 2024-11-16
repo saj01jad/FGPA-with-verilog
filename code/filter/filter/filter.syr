@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: filter.prj
 
@@ -120,14 +120,14 @@ Elaborating module <filter>.
 
 Synthesizing Unit <filter>.
     Related source file is "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\filter\filter\filter.v".
+    Register <Yn> equivalent to <Yn_1> has been removed
     Found 16-bit register for signal <Yn_1>.
-    Found 16-bit register for signal <Yn>.
     Found 16-bit register for signal <Xn_1>.
-    Found 16-bit adder for signal <n0017> created at line 18.
-    Found 16-bit adder for signal <Xn[15]_Yn_1[15]_add_1_OUT> created at line 18.
+    Found 16-bit adder for signal <n0017> created at line 19.
+    Found 16-bit adder for signal <Xn[15]_Yn_1[15]_add_1_OUT> created at line 19.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  48 D-type flip-flop(s).
+	inferred  32 D-type flip-flop(s).
 Unit <filter> synthesized.
 
 =========================================================================
@@ -136,8 +136,8 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 2
  16-bit adder                                          : 2
-# Registers                                            : 3
- 16-bit register                                       : 3
+# Registers                                            : 2
+ 16-bit register                                       : 2
 
 =========================================================================
 
@@ -146,14 +146,20 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <filter>.
+The following registers are absorbed into accumulator <Yn_1>: 1 register on signal <Yn_1>.
+Unit <filter> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 16-bit adder                                          : 2
-# Registers                                            : 48
- Flip-Flops                                            : 48
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Accumulators                                         : 1
+ 16-bit up accumulator                                 : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
 
 =========================================================================
 
@@ -162,10 +168,12 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <filter> ...
+INFO:Xst:2261 - The FF/Latch <Xn_1_0> in Unit <filter> is equivalent to the following FF/Latch, which will be removed : <Yn_1_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block filter, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block filter, actual ratio is 0.
+FlipFlop Xn_1_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -173,8 +181,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 48
- Flip-Flops                                            : 48
+# Registers                                            : 32
+ Flip-Flops                                            : 32
 
 =========================================================================
 
@@ -197,14 +205,13 @@ Top Level Output File Name         : filter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 64
+# BELS                             : 94
 #      GND                         : 1
-#      LUT3                        : 16
-#      LUT4                        : 16
-#      MUXCY                       : 15
-#      XORCY                       : 16
-# FlipFlops/Latches                : 48
-#      FDC                         : 48
+#      LUT2                        : 32
+#      MUXCY                       : 30
+#      XORCY                       : 31
+# FlipFlops/Latches                : 32
+#      FDC                         : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 33
@@ -218,20 +225,21 @@ Selected Device : 6slx9ftg256-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              48  out of  11440     0%  
+ Number of Slice Registers:              31  out of  11440     0%  
  Number of Slice LUTs:                   32  out of   5720     0%  
     Number used as Logic:                32  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     49
-   Number with an unused Flip Flop:       1  out of     49     2%  
-   Number with an unused LUT:            17  out of     49    34%  
-   Number of fully used LUT-FF pairs:    31  out of     49    63%  
+ Number of LUT Flip Flop pairs used:     48
+   Number with an unused Flip Flop:      17  out of     48    35%  
+   Number with an unused LUT:            16  out of     48    33%  
+   Number of fully used LUT-FF pairs:    15  out of     48    31%  
    Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          34
  Number of bonded IOBs:                  34  out of    186    18%  
+    IOB Flip Flops/Latches:               1
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -257,7 +265,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 48    |
+clk                                | BUFGP                  | 32    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -268,8 +276,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.857ns (Maximum Frequency: 350.005MHz)
-   Minimum input arrival time before clock: 3.792ns
+   Minimum period: 3.107ns (Maximum Frequency: 321.843MHz)
+   Minimum input arrival time before clock: 4.018ns
    Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
 
@@ -279,92 +287,96 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.857ns (frequency: 350.005MHz)
-  Total number of paths / destination ports: 738 / 32
+  Clock period: 3.107ns (frequency: 321.843MHz)
+  Total number of paths / destination ports: 1070 / 15
 -------------------------------------------------------------------------
-Delay:               2.857ns (Levels of Logic = 17)
+Delay:               3.107ns (Levels of Logic = 19)
   Source:            Xn_1_0 (FF)
-  Destination:       Yn_15 (FF)
+  Destination:       Yn_1_15 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Xn_1_0 to Yn_15
+  Data Path: Xn_1_0 to Yn_1_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.721  Xn_1_0 (Xn_1_0)
-     LUT3:I1->O            1   0.203   0.580  Madd_Xn[15]_Yn_1[15]_add_1_OUT (Madd_Xn[15]_Yn_1[15]_add_1_OUT)
-     LUT4:I3->O            1   0.205   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_lut<0>1 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_lut<0>1)
-     MUXCY:S->O            1   0.172   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_0 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>1)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_1 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>2)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_2 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>3)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_3 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>4)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_4 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>5)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_5 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>6)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_6 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>7)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_7 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>8)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_8 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>9)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_9 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>10)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_10 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>11)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_11 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>12)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_12 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>13)
-     MUXCY:CI->O           0   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_13 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>14)
-     XORCY:CI->O           1   0.180   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_xor<0>_14 (Xn[15]_Yn_1[15]_add_1_OUT<15>)
-     FDC:D                     0.102          Yn_15
+     FDC:C->Q              2   0.447   0.617  Xn_1_0 (Xn_1_0)
+     LUT2:I1->O            1   0.205   0.000  Madd_n0017_lut<0> (Madd_n0017_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_n0017_cy<0> (Madd_n0017_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<1> (Madd_n0017_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<2> (Madd_n0017_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<3> (Madd_n0017_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<4> (Madd_n0017_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<5> (Madd_n0017_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<6> (Madd_n0017_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<7> (Madd_n0017_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<8> (Madd_n0017_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<9> (Madd_n0017_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<10> (Madd_n0017_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<11> (Madd_n0017_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<12> (Madd_n0017_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<13> (Madd_n0017_cy<13>)
+     XORCY:CI->O           1   0.180   0.580  Madd_n0017_xor<14> (n0017<14>)
+     LUT2:I1->O            1   0.205   0.000  Maccum_Yn_1_lut<14> (Maccum_Yn_1_lut<14>)
+     MUXCY:S->O            0   0.172   0.000  Maccum_Yn_1_cy<14> (Maccum_Yn_1_cy<14>)
+     XORCY:CI->O           1   0.180   0.000  Maccum_Yn_1_xor<15> (Result<15>)
+     FDC:D                     0.102          Yn_1_15
     ----------------------------------------
-    Total                      2.857ns (1.556ns logic, 1.301ns route)
-                                       (54.5% logic, 45.5% route)
+    Total                      3.107ns (1.910ns logic, 1.197ns route)
+                                       (61.5% logic, 38.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 425 / 80
+  Total number of paths / destination ports: 1544 / 64
 -------------------------------------------------------------------------
-Offset:              3.792ns (Levels of Logic = 18)
+Offset:              4.018ns (Levels of Logic = 20)
   Source:            Xn<0> (PAD)
-  Destination:       Yn_15 (FF)
+  Destination:       Yn_1_15 (FF)
   Destination Clock: clk rising
 
-  Data Path: Xn<0> to Yn_15
+  Data Path: Xn<0> to Yn_1_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.222   0.879  Xn_0_IBUF (Xn_0_IBUF)
-     LUT3:I0->O            1   0.205   0.580  Madd_Xn[15]_Yn_1[15]_add_1_OUT (Madd_Xn[15]_Yn_1[15]_add_1_OUT)
-     LUT4:I3->O            1   0.205   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_lut<0>1 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_lut<0>1)
-     MUXCY:S->O            1   0.172   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_0 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>1)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_1 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>2)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_2 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>3)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_3 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>4)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_4 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>5)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_5 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>6)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_6 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>7)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_7 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>8)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_8 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>9)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_9 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>10)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_10 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>11)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_11 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>12)
-     MUXCY:CI->O           1   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_12 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>13)
-     MUXCY:CI->O           0   0.019   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>_13 (Madd_Xn[15]_Yn_1[15]_add_1_OUT_cy<0>14)
-     XORCY:CI->O           1   0.180   0.000  Madd_Xn[15]_Yn_1[15]_add_1_OUT_xor<0>_14 (Xn[15]_Yn_1[15]_add_1_OUT<15>)
-     FDC:D                     0.102          Yn_15
+     IBUF:I->O             3   1.222   0.755  Xn_0_IBUF (Xn_0_IBUF)
+     LUT2:I0->O            1   0.203   0.000  Madd_n0017_lut<0> (Madd_n0017_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_n0017_cy<0> (Madd_n0017_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<1> (Madd_n0017_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<2> (Madd_n0017_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<3> (Madd_n0017_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<4> (Madd_n0017_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<5> (Madd_n0017_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<6> (Madd_n0017_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<7> (Madd_n0017_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<8> (Madd_n0017_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<9> (Madd_n0017_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<10> (Madd_n0017_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<11> (Madd_n0017_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<12> (Madd_n0017_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n0017_cy<13> (Madd_n0017_cy<13>)
+     XORCY:CI->O           1   0.180   0.580  Madd_n0017_xor<14> (n0017<14>)
+     LUT2:I1->O            1   0.205   0.000  Maccum_Yn_1_lut<14> (Maccum_Yn_1_lut<14>)
+     MUXCY:S->O            0   0.172   0.000  Maccum_Yn_1_cy<14> (Maccum_Yn_1_cy<14>)
+     XORCY:CI->O           1   0.180   0.000  Maccum_Yn_1_xor<15> (Result<15>)
+     FDC:D                     0.102          Yn_1_15
     ----------------------------------------
-    Total                      3.792ns (2.333ns logic, 1.459ns route)
-                                       (61.5% logic, 38.5% route)
+    Total                      4.018ns (2.683ns logic, 1.335ns route)
+                                       (66.8% logic, 33.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
 Offset:              3.634ns (Levels of Logic = 1)
-  Source:            Yn_15 (FF)
+  Source:            Yn_1_15 (FF)
   Destination:       Yn<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: Yn_15 to Yn<15>
+  Data Path: Yn_1_15 to Yn<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.616  Yn_15 (Yn_15)
+     FDC:C->Q              2   0.447   0.616  Yn_1_15 (Yn_1_15)
      OBUF:I->O                 2.571          Yn_15_OBUF (Yn<15>)
     ----------------------------------------
     Total                      3.634ns (3.018ns logic, 0.616ns route)
@@ -380,20 +392,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.857|         |         |         |
+clk            |    3.107|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.91 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.22 secs
  
 --> 
 
-Total memory usage is 4487884 kilobytes
+Total memory usage is 4487868 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

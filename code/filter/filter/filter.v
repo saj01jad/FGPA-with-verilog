@@ -11,13 +11,14 @@ module filter (
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            Xn_1 <= 0;
-            Yn_1 <= 0;
-            Yn <= 0;
-        end else begin
-            Yn <= Xn + Xn_1 + Yn_1;
-            Xn_1 <= Xn;
-            Yn_1 <= Yn;
+            Xn_1 = 0;
+            Yn_1 = 0;
+            Yn = 0;
+        end 
+		  else begin 
+            Yn = Xn + Xn_1 + Yn_1;
+            Xn_1 = Xn;
+            Yn_1 = Yn;
         end
     end
 endmodule

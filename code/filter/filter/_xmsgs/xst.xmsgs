@@ -5,4 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Xn_1_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">filter</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Yn_1_0&gt; </arg>
+</msg>
+
 </messages>
+
