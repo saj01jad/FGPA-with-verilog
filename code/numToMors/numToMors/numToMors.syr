@@ -1,0 +1,688 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: numToMors.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "numToMors.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "numToMors"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-ftg256
+
+---- Source Options
+Top Module Name                    : numToMors
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" into library work
+Parsing module <numToMors>.
+WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
+
+Elaborating module <numToMors>.
+WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 33: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Result of 46-bit expression is truncated to fit in 15-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <numToMors>.
+    Related source file is "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v".
+WARNING:Xst:647 - Input <inputNum<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit register for signal <index>.
+    Found 1-bit register for signal <numTemp<14>>.
+    Found 1-bit register for signal <mors>.
+    Found 150-bit register for signal <n0016[149:0]>.
+    Found 5-bit adder for signal <index[4]_GND_1_o_add_4_OUT> created at line 33.
+    Found 1-bit 10-to-1 multiplexer for signal <inputNum[3]_X_1_o_wide_mux_3_OUT[14]> created at line 30.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 157 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <numToMors> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Registers                                            : 4
+ 1-bit register                                        : 2
+ 150-bit register                                      : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 1
+ 1-bit 10-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <lt_0_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_29> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_149> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <lt_0_0> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_1> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_2> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_3> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_4> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_5> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_6> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_7> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_8> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_9> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_10> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_11> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_12> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_13> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_15> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_16> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_17> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_18> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_19> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_20> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_21> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_22> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_23> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_24> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_25> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_26> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_27> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_28> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_30> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_31> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_32> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_33> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_34> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_35> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_36> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_37> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_38> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_39> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_40> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_41> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_42> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_43> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_45> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_46> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_47> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_48> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_49> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_50> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_51> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_52> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_53> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_54> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_55> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_56> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_57> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_58> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_60> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_61> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_62> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_63> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_64> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_65> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_66> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_67> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_68> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_69> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_70> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_71> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_72> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_73> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_75> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_76> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_77> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_78> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_79> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_80> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_81> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_82> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_83> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_84> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_85> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_86> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_87> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_88> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_90> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_91> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_92> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_93> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_94> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_95> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_96> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_97> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_98> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_99> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_100> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_101> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_102> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_103> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_105> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_106> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_107> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_108> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_109> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_110> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_111> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_112> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_113> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_114> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_115> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_116> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_117> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_118> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_120> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_121> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_122> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_123> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_124> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_125> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_126> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_127> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_128> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_129> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_130> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_131> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_132> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_133> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_135> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_136> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_137> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_138> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_139> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_140> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_141> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_142> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_143> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_144> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_145> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_146> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_147> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_148> of sequential type is unconnected in block <numToMors>.
+
+Synthesizing (advanced) Unit <numToMors>.
+The following registers are absorbed into counter <index>: 1 register on signal <index>.
+Unit <numToMors> synthesized (advanced).
+WARNING:Xst:2677 - Node <lt_0_0> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_1> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_2> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_3> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_4> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_5> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_6> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_7> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_8> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_9> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_10> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_11> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_12> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_13> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_15> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_16> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_17> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_18> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_19> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_20> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_21> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_22> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_23> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_24> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_25> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_26> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_27> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_28> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_30> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_31> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_32> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_33> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_34> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_35> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_36> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_37> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_38> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_39> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_40> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_41> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_42> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_43> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_45> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_46> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_47> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_48> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_49> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_50> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_51> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_52> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_53> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_54> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_55> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_56> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_57> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_58> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_60> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_61> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_62> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_63> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_64> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_65> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_66> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_67> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_68> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_69> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_70> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_71> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_72> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_73> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_75> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_76> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_77> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_78> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_79> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_80> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_81> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_82> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_83> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_84> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_85> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_86> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_87> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_88> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_90> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_91> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_92> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_93> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_94> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_95> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_96> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_97> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_98> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_99> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_100> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_101> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_102> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_103> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_105> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_106> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_107> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_108> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_109> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_110> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_111> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_112> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_113> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_114> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_115> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_116> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_117> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_118> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_120> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_121> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_122> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_123> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_124> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_125> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_126> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_127> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_128> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_129> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_130> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_131> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_132> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_133> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_135> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_136> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_137> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_138> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_139> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_140> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_141> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_142> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_143> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_144> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_145> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_146> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_147> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:2677 - Node <lt_0_148> of sequential type is unconnected in block <numToMors>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Multiplexers                                         : 1
+ 1-bit 10-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <lt_0_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_29> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_149> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <numToMors> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block numToMors, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : numToMors.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 9
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 2
+#      LUT4                        : 1
+#      LUT5                        : 2
+#      LUT6                        : 2
+# FlipFlops/Latches                : 7
+#      FD                          : 2
+#      FDS                         : 5
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 5
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               7  out of  11440     0%  
+ Number of Slice LUTs:                    9  out of   5720     0%  
+    Number used as Logic:                 9  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      9
+   Number with an unused Flip Flop:       2  out of      9    22%  
+   Number with an unused LUT:             0  out of      9     0%  
+   Number of fully used LUT-FF pairs:     7  out of      9    77%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                           8
+ Number of bonded IOBs:                   7  out of    186     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 7     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.532ns (Maximum Frequency: 394.929MHz)
+   Minimum input arrival time before clock: 3.598ns
+   Maximum output required time after clock: 3.634ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.532ns (frequency: 394.929MHz)
+  Total number of paths / destination ports: 27 / 7
+-------------------------------------------------------------------------
+Delay:               2.532ns (Levels of Logic = 2)
+  Source:            index_4 (FF)
+  Destination:       mors (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: index_4 to mors
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              3   0.447   0.995  index_4 (index_4)
+     LUT6:I1->O            1   0.203   0.580  _n0081_inv1 (_n0081_inv)
+     LUT3:I2->O            1   0.205   0.000  mors_rstpot (mors_rstpot)
+     FD:D                      0.102          mors
+    ----------------------------------------
+    Total                      2.532ns (0.957ns logic, 1.575ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 11 / 7
+-------------------------------------------------------------------------
+Offset:              3.598ns (Levels of Logic = 3)
+  Source:            inputNum<3> (PAD)
+  Destination:       numTemp (FF)
+  Destination Clock: clk rising
+
+  Data Path: inputNum<3> to numTemp
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.924  inputNum_3_IBUF (inputNum_3_IBUF)
+     LUT5:I0->O            1   0.203   0.944  index[4]_PWR_1_o_equal_3_o_inv11_SW0 (N3)
+     LUT6:I0->O            1   0.203   0.000  numTemp_rstpot (numTemp_rstpot)
+     FD:D                      0.102          numTemp
+    ----------------------------------------
+    Total                      3.598ns (1.730ns logic, 1.868ns route)
+                                       (48.1% logic, 51.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.634ns (Levels of Logic = 1)
+  Source:            mors (FF)
+  Destination:       mors (PAD)
+  Source Clock:      clk rising
+
+  Data Path: mors to mors
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  mors (mors_OBUF)
+     OBUF:I->O                 2.571          mors_OBUF (mors)
+    ----------------------------------------
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.532|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.01 secs
+ 
+--> 
+
+Total memory usage is 4487868 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  305 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
