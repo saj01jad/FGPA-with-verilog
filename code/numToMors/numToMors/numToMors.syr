@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: numToMors.prj
 
@@ -107,16 +107,13 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" into library work
 Parsing module <numToMors>.
-WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
 
 Elaborating module <numToMors>.
-WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 33: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Result of 46-bit expression is truncated to fit in 15-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v" Line 35: Result of 3-bit expression is truncated to fit in 2-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -125,16 +122,16 @@ WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\cod
 Synthesizing Unit <numToMors>.
     Related source file is "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\numToMors\numToMors\numToMors.v".
 WARNING:Xst:647 - Input <inputNum<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit register for signal <index>.
-    Found 1-bit register for signal <numTemp<14>>.
+    Found 2-bit register for signal <index>.
+    Found 21-bit register for signal <numTemp>.
     Found 1-bit register for signal <mors>.
-    Found 150-bit register for signal <n0016[149:0]>.
-    Found 5-bit adder for signal <index[4]_GND_1_o_add_4_OUT> created at line 33.
-    Found 1-bit 10-to-1 multiplexer for signal <inputNum[3]_X_1_o_wide_mux_3_OUT[14]> created at line 30.
+    Found 210-bit register for signal <n0018[209:0]>.
+    Found 2-bit adder for signal <index[1]_GND_1_o_add_5_OUT> created at line 35.
+    Found 21-bit 10-to-1 multiplexer for signal <inputNum[3]_X_1_o_wide_mux_3_OUT> created at line 30.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred 157 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred 234 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <numToMors> synthesized.
 
 =========================================================================
@@ -142,13 +139,15 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
- 5-bit adder                                           : 1
+ 2-bit adder                                           : 1
 # Registers                                            : 4
- 1-bit register                                        : 2
- 150-bit register                                      : 1
- 5-bit register                                        : 1
-# Multiplexers                                         : 1
- 1-bit 10-to-1 multiplexer                             : 1
+ 1-bit register                                        : 1
+ 2-bit register                                        : 1
+ 21-bit register                                       : 1
+ 210-bit register                                      : 1
+# Multiplexers                                         : 2
+ 21-bit 10-to-1 multiplexer                            : 1
+ 21-bit 2-to-1 multiplexer                             : 1
 
 =========================================================================
 
@@ -156,333 +155,458 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <lt_0_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_29> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_149> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <lt_0_0> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_1> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_2> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_3> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_4> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_5> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_6> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_7> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_8> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_9> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_10> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_11> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_12> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_13> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_15> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_16> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_17> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_18> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_19> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_20> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_21> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_22> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_23> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_24> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_25> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_26> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_27> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_28> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_30> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_31> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_32> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_33> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_34> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_35> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_36> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_37> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_38> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_39> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_40> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_41> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_42> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_43> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_45> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_46> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_47> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_48> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_49> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_50> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_51> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_52> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_53> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_54> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_55> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_56> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_57> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_58> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_60> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_61> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_62> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_63> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_64> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_65> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_66> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_67> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_68> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_69> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_70> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_71> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_72> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_73> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_75> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_76> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_77> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_78> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_79> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_80> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_81> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_82> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_83> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_84> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_85> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_86> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_87> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_88> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_90> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_91> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_92> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_93> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_94> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_95> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_96> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_97> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_98> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_99> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_100> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_101> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_102> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_103> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_105> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_106> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_107> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_108> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_109> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_110> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_111> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_112> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_113> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_114> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_115> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_116> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_117> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_118> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_120> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_121> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_122> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_123> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_124> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_125> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_126> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_127> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_128> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_129> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_130> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_131> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_132> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_133> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_135> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_136> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_137> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_138> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_139> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_140> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_141> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_142> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_143> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_144> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_145> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_146> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_147> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_148> of sequential type is unconnected in block <numToMors>.
+WARNING:Xst:1710 - FF/Latch <lt_9_131> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_132> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_133> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_135> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_136> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_137> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_138> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_139> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_140> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_141> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_142> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_143> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_144> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_145> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_146> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_147> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_148> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_149> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_150> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_151> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_152> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_153> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_154> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_155> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_156> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_105> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_106> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_107> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_108> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_109> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_110> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_111> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_112> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_113> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_114> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_115> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_116> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_117> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_118> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_120> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_121> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_122> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_123> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_124> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_125> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_126> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_127> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_128> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_129> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_130> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_184> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_185> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_186> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_187> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_188> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_189> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_190> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_191> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_192> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_193> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_194> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_195> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_196> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_197> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_198> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_199> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_200> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_201> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_202> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_203> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_204> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_205> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_206> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_207> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_208> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_209> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_157> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_158> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_159> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_160> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_161> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_162> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_163> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_164> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_165> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_166> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_167> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_168> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_169> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_170> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_171> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_172> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_173> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_174> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_175> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_176> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_177> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_178> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_179> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_180> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_181> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_182> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_183> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_26> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_27> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_28> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_29> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_30> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_31> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_32> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_33> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_34> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_35> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_36> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_37> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_38> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_39> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_40> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_41> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_42> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_43> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_45> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_46> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_47> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_48> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_49> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_50> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_51> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_0> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_1> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_2> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_3> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_4> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_5> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_6> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_7> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_8> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_9> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_10> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_11> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_12> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_13> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_15> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_16> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_17> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_18> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_19> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_20> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_21> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_22> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_23> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_24> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_25> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_79> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_80> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_81> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_82> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_83> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_84> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_85> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_86> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_87> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_88> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_90> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_91> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_92> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_93> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_94> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_95> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_96> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_97> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_98> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_99> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_100> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_101> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_102> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_103> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_52> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_53> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_54> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_55> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_56> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_57> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_58> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_60> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_61> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_62> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_63> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_64> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_65> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_66> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_67> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_68> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_69> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_70> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_71> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_72> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_73> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_75> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_76> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_77> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_78> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <numToMors>.
 The following registers are absorbed into counter <index>: 1 register on signal <index>.
 Unit <numToMors> synthesized (advanced).
-WARNING:Xst:2677 - Node <lt_0_0> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_1> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_2> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_3> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_4> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_5> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_6> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_7> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_8> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_9> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_10> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_11> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_12> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_13> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_15> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_16> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_17> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_18> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_19> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_20> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_21> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_22> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_23> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_24> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_25> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_26> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_27> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_28> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_30> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_31> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_32> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_33> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_34> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_35> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_36> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_37> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_38> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_39> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_40> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_41> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_42> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_43> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_45> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_46> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_47> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_48> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_49> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_50> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_51> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_52> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_53> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_54> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_55> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_56> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_57> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_58> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_60> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_61> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_62> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_63> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_64> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_65> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_66> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_67> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_68> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_69> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_70> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_71> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_72> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_73> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_75> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_76> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_77> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_78> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_79> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_80> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_81> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_82> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_83> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_84> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_85> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_86> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_87> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_88> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_90> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_91> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_92> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_93> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_94> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_95> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_96> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_97> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_98> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_99> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_100> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_101> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_102> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_103> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_105> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_106> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_107> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_108> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_109> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_110> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_111> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_112> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_113> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_114> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_115> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_116> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_117> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_118> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_120> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_121> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_122> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_123> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_124> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_125> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_126> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_127> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_128> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_129> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_130> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_131> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_132> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_133> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_135> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_136> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_137> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_138> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_139> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_140> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_141> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_142> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_143> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_144> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_145> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_146> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_147> of sequential type is unconnected in block <numToMors>.
-WARNING:Xst:2677 - Node <lt_0_148> of sequential type is unconnected in block <numToMors>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
 # Counters                                             : 1
- 5-bit up counter                                      : 1
-# Registers                                            : 12
- Flip-Flops                                            : 12
-# Multiplexers                                         : 1
- 1-bit 10-to-1 multiplexer                             : 1
+ 2-bit up counter                                      : 1
+# Registers                                            : 232
+ Flip-Flops                                            : 232
+# Multiplexers                                         : 22
+ 1-bit 10-to-1 multiplexer                             : 21
+ 21-bit 2-to-1 multiplexer                             : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <lt_0_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_29> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_0_149> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lt_9_131> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_132> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_133> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_134> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_135> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_136> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_137> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_138> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_139> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_140> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_141> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_142> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_143> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_144> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_145> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_146> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_147> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_148> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_149> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_150> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_151> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_152> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_153> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_154> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_155> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_156> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_105> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_106> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_107> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_108> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_109> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_110> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_111> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_112> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_113> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_114> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_115> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_116> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_117> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_118> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_119> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_120> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_121> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_122> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_123> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_124> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_125> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_126> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_127> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_128> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_129> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_130> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_184> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_185> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_186> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_187> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_188> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_189> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_190> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_191> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_192> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_193> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_194> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_195> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_196> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_197> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_198> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_199> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_200> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_201> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_202> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_203> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_204> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_205> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_206> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_207> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_208> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_209> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_157> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_158> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_159> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_160> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_161> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_162> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_163> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_164> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_165> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_166> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_167> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_168> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_169> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_170> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_171> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_172> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_173> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_174> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_175> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_176> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_177> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_178> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_179> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_180> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_181> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_182> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_183> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_26> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_27> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_28> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_29> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_30> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_31> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_32> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_33> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_34> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_35> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_36> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_37> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_38> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_39> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_40> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_41> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_42> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_43> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_44> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_45> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_46> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_47> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_48> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_49> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_50> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_51> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_0> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_1> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_2> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_3> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_4> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_5> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_6> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_7> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_8> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_9> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_10> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_11> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_12> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_13> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_14> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_15> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_16> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_17> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_18> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_19> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_20> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_21> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_22> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_23> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_24> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_25> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_79> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_80> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_81> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_82> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_83> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_84> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_85> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_86> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_87> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_88> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_89> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_90> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_91> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_92> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_93> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_94> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_95> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_96> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_97> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_98> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_99> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_100> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_101> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_102> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_103> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_104> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_52> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_53> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_54> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_55> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_56> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_57> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_58> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_59> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_60> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_61> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_62> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_63> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_64> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_65> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_66> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_67> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_68> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_69> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_70> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_71> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_72> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_73> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_74> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_75> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_76> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_77> (without init value) has a constant value of 1 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lt_9_78> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <numTemp_0> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <numTemp_1> (without init value) has a constant value of 0 in block <numToMors>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <numToMors> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block numToMors, actual ratio is 0.
+FlipFlop index_0 has been replicated 1 time(s)
+FlipFlop index_1 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -490,8 +614,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 7
- Flip-Flops                                            : 7
+# Registers                                            : 25
+ Flip-Flops                                            : 25
 
 =========================================================================
 
@@ -514,16 +638,15 @@ Top Level Output File Name         : numToMors.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 9
-#      INV                         : 1
-#      LUT2                        : 1
-#      LUT3                        : 2
-#      LUT4                        : 1
-#      LUT5                        : 2
-#      LUT6                        : 2
-# FlipFlops/Latches                : 7
-#      FD                          : 2
-#      FDS                         : 5
+# BELS                             : 29
+#      LUT2                        : 5
+#      LUT3                        : 7
+#      LUT4                        : 2
+#      LUT5                        : 3
+#      LUT6                        : 12
+# FlipFlops/Latches                : 25
+#      FD                          : 6
+#      FDR                         : 19
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 6
@@ -537,15 +660,15 @@ Selected Device : 6slx9ftg256-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               7  out of  11440     0%  
- Number of Slice LUTs:                    9  out of   5720     0%  
-    Number used as Logic:                 9  out of   5720     0%  
+ Number of Slice Registers:              25  out of  11440     0%  
+ Number of Slice LUTs:                   29  out of   5720     0%  
+    Number used as Logic:                29  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      9
-   Number with an unused Flip Flop:       2  out of      9    22%  
-   Number with an unused LUT:             0  out of      9     0%  
-   Number of fully used LUT-FF pairs:     7  out of      9    77%  
+ Number of LUT Flip Flop pairs used:     31
+   Number with an unused Flip Flop:       6  out of     31    19%  
+   Number with an unused LUT:             2  out of     31     6%  
+   Number of fully used LUT-FF pairs:    23  out of     31    74%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -576,7 +699,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 7     |
+clk                                | BUFGP                  | 25    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -587,8 +710,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.532ns (Maximum Frequency: 394.929MHz)
-   Minimum input arrival time before clock: 3.598ns
+   Minimum period: 1.739ns (Maximum Frequency: 574.944MHz)
+   Minimum input arrival time before clock: 3.842ns
    Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
 
@@ -598,47 +721,46 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.532ns (frequency: 394.929MHz)
-  Total number of paths / destination ports: 27 / 7
+  Clock period: 1.739ns (frequency: 574.944MHz)
+  Total number of paths / destination ports: 75 / 25
 -------------------------------------------------------------------------
-Delay:               2.532ns (Levels of Logic = 2)
-  Source:            index_4 (FF)
-  Destination:       mors (FF)
+Delay:               1.739ns (Levels of Logic = 1)
+  Source:            index_1 (FF)
+  Destination:       numTemp_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: index_4 to mors
+  Data Path: index_1 to numTemp_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q              3   0.447   0.995  index_4 (index_4)
-     LUT6:I1->O            1   0.203   0.580  _n0081_inv1 (_n0081_inv)
-     LUT3:I2->O            1   0.205   0.000  mors_rstpot (mors_rstpot)
-     FD:D                      0.102          mors
+     FD:C->Q              11   0.447   0.987  index_1 (index_1)
+     LUT4:I2->O            3   0.203   0.000  index_1_rstpot (index_1_rstpot)
+     FD:D                      0.102          index_1
     ----------------------------------------
-    Total                      2.532ns (0.957ns logic, 1.575ns route)
-                                       (37.8% logic, 62.2% route)
+    Total                      1.739ns (0.752ns logic, 0.987ns route)
+                                       (43.2% logic, 56.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 11 / 7
+  Total number of paths / destination ports: 78 / 39
 -------------------------------------------------------------------------
-Offset:              3.598ns (Levels of Logic = 3)
-  Source:            inputNum<3> (PAD)
-  Destination:       numTemp (FF)
+Offset:              3.842ns (Levels of Logic = 3)
+  Source:            inputNum<2> (PAD)
+  Destination:       numTemp_15 (FF)
   Destination Clock: clk rising
 
-  Data Path: inputNum<3> to numTemp
+  Data Path: inputNum<2> to numTemp_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.924  inputNum_3_IBUF (inputNum_3_IBUF)
-     LUT5:I0->O            1   0.203   0.944  index[4]_PWR_1_o_equal_3_o_inv11_SW0 (N3)
-     LUT6:I0->O            1   0.203   0.000  numTemp_rstpot (numTemp_rstpot)
-     FD:D                      0.102          numTemp
+     IBUF:I->O            14   1.222   1.186  inputNum_2_IBUF (inputNum_2_IBUF)
+     LUT3:I0->O            1   0.205   0.924  GND_1_o_GND_1_o_equal_3_o<1>1_SW1 (N7)
+     LUT5:I0->O            1   0.203   0.000  Mmux_numTemp[19]_inputNum[3]_mux_8_OUT101 (numTemp[19]_inputNum[3]_mux_8_OUT<19>)
+     FDR:D                     0.102          numTemp_19
     ----------------------------------------
-    Total                      3.598ns (1.730ns logic, 1.868ns route)
-                                       (48.1% logic, 51.9% route)
+    Total                      3.842ns (1.732ns logic, 2.110ns route)
+                                       (45.1% logic, 54.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -669,20 +791,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.532|         |         |         |
+clk            |    1.739|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.01 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.16 secs
  
 --> 
 
 Total memory usage is 4487868 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  305 (   0 filtered)
+Number of warnings :  424 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

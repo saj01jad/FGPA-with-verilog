@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-11-20T19:13:44</DateModified>
+  <DateModified>2024-11-20T21:00:59</DateModified>
   <ModuleName>numToMors</ModuleName>
   <SummaryTimeStamp>2024-11-20T19:04:47</SummaryTimeStamp>
   <SavedFilePath>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors/iseconfig/numToMors.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors\</ImplementationReportsDirectory>
   <DateInitialized>2024-11-20T17:54:32</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -5,11 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors/numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors/numToMors.v" Line 35: Concatenation with unsized literal; will interpret as 32 bits
-</msg>
-
 </messages>
 
