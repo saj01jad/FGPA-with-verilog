@@ -11,7 +11,7 @@ module filter (
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            Xn_1 = 0;
+            Xn_1 = Xn;
             Yn_1 = 0;
             Yn = 0;
         end 

@@ -50,6 +50,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1731734226" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1731734226">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1731734636" xil_pn:in_ck="-8919456587036584245" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1731734636">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -87,7 +88,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1731734642" xil_pn:in_ck="-1823959034427665194" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5118077578104439490" xil_pn:start_ts="1731734642">
+    <transform xil_pn:end_ts="1732438232" xil_pn:in_ck="-1823959034427665194" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5118077578104439490" xil_pn:start_ts="1732438232">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -98,6 +99,7 @@
     </transform>
     <transform xil_pn:end_ts="1731734042" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1731734042">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1731734042" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="4970841060908428679" xil_pn:start_ts="1731734042">
       <status xil_pn:value="SuccessfullyRun"/>

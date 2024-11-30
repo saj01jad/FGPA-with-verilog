@@ -14,5 +14,5 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Compiled 3 Verilog Units
 Built simulation executable C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/numToMors/numToMors/numToMors_tb_isim_beh.exe
-Fuse Memory Usage: 28444 KB
-Fuse CPU Usage: 265 ms
+Fuse Memory Usage: 28396 KB
+Fuse CPU Usage: 468 ms

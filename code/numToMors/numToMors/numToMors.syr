@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: numToMors.prj
 
@@ -131,7 +131,7 @@ WARNING:Xst:647 - Input <inputNum<4:4>> is never used. This port will be preserv
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 234 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <numToMors> synthesized.
 
 =========================================================================
@@ -145,7 +145,8 @@ Macro Statistics
  2-bit register                                        : 1
  21-bit register                                       : 1
  210-bit register                                      : 1
-# Multiplexers                                         : 2
+# Multiplexers                                         : 3
+ 2-bit 2-to-1 multiplexer                              : 1
  21-bit 10-to-1 multiplexer                            : 1
  21-bit 2-to-1 multiplexer                             : 1
 
@@ -606,7 +607,7 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block numToMors, actual ratio is 0.
 FlipFlop index_0 has been replicated 1 time(s)
-FlipFlop index_1 has been replicated 2 time(s)
+FlipFlop index_1 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -614,8 +615,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 25
- Flip-Flops                                            : 25
+# Registers                                            : 24
+ Flip-Flops                                            : 24
 
 =========================================================================
 
@@ -644,9 +645,10 @@ Primitive and Black Box Usage:
 #      LUT4                        : 2
 #      LUT5                        : 3
 #      LUT6                        : 12
-# FlipFlops/Latches                : 25
-#      FD                          : 6
+# FlipFlops/Latches                : 24
+#      FD                          : 3
 #      FDR                         : 19
+#      FDS                         : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 6
@@ -660,15 +662,15 @@ Selected Device : 6slx9ftg256-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              25  out of  11440     0%  
+ Number of Slice Registers:              24  out of  11440     0%  
  Number of Slice LUTs:                   29  out of   5720     0%  
     Number used as Logic:                29  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     31
-   Number with an unused Flip Flop:       6  out of     31    19%  
-   Number with an unused LUT:             2  out of     31     6%  
-   Number of fully used LUT-FF pairs:    23  out of     31    74%  
+ Number of LUT Flip Flop pairs used:     30
+   Number with an unused Flip Flop:       6  out of     30    20%  
+   Number with an unused LUT:             1  out of     30     3%  
+   Number of fully used LUT-FF pairs:    23  out of     30    76%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -699,7 +701,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 25    |
+clk                                | BUFGP                  | 24    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -710,7 +712,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.739ns (Maximum Frequency: 574.944MHz)
+   Minimum period: 1.804ns (Maximum Frequency: 554.354MHz)
    Minimum input arrival time before clock: 3.842ns
    Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
@@ -721,10 +723,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.739ns (frequency: 574.944MHz)
-  Total number of paths / destination ports: 75 / 25
+  Clock period: 1.804ns (frequency: 554.354MHz)
+  Total number of paths / destination ports: 72 / 24
 -------------------------------------------------------------------------
-Delay:               1.739ns (Levels of Logic = 1)
+Delay:               1.804ns (Levels of Logic = 1)
   Source:            index_1 (FF)
   Destination:       numTemp_3 (FF)
   Source Clock:      clk rising
@@ -734,16 +736,16 @@ Delay:               1.739ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              11   0.447   0.987  index_1 (index_1)
-     LUT4:I2->O            3   0.203   0.000  index_1_rstpot (index_1_rstpot)
-     FD:D                      0.102          index_1
+     FDS:C->Q             18   0.447   1.050  index_1 (index_1)
+     LUT3:I2->O            1   0.205   0.000  Mmux_numTemp[19]_inputNum[3]_mux_8_OUT121 (numTemp[19]_inputNum[3]_mux_8_OUT<20>)
+     FDR:D                     0.102          numTemp_20
     ----------------------------------------
-    Total                      1.739ns (0.752ns logic, 0.987ns route)
-                                       (43.2% logic, 56.8% route)
+    Total                      1.804ns (0.754ns logic, 1.050ns route)
+                                       (41.8% logic, 58.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 78 / 39
+  Total number of paths / destination ports: 79 / 40
 -------------------------------------------------------------------------
 Offset:              3.842ns (Levels of Logic = 3)
   Source:            inputNum<2> (PAD)
@@ -755,7 +757,7 @@ Offset:              3.842ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            14   1.222   1.186  inputNum_2_IBUF (inputNum_2_IBUF)
-     LUT3:I0->O            1   0.205   0.924  GND_1_o_GND_1_o_equal_3_o<1>1_SW1 (N7)
+     LUT3:I0->O            1   0.205   0.924  GND_1_o_GND_1_o_equal_3_o<1>1_SW1 (N6)
      LUT5:I0->O            1   0.203   0.000  Mmux_numTemp[19]_inputNum[3]_mux_8_OUT101 (numTemp[19]_inputNum[3]_mux_8_OUT<19>)
      FDR:D                     0.102          numTemp_19
     ----------------------------------------
@@ -791,14 +793,14 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.739|         |         |         |
+clk            |    1.804|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.16 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.11 secs
  
 --> 
 

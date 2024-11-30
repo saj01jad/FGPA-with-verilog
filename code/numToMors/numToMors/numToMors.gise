@@ -26,7 +26,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="numToMors.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="numToMors.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="numToMors.ngc"/>
@@ -37,7 +36,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="numToMors.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="numToMors_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="numToMors_summary.html"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="numToMors_tb_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="numToMors_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="numToMors_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="numToMors_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="numToMors_tb_stx_beh.prj"/>
@@ -52,7 +51,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1732126862" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1732126862">
+    <transform xil_pn:end_ts="1732439773" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1732439773">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="numToMors.v"/>
@@ -70,31 +69,27 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1732126867" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1732126867">
+    <transform xil_pn:end_ts="1732439773" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1732439773">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="numToMors.v"/>
       <outfile xil_pn:name="numToMors_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1732126869" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8920276154221506079" xil_pn:start_ts="1732126867">
+    <transform xil_pn:end_ts="1732439776" xil_pn:in_ck="409530663509578341" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8920276154221506079" xil_pn:start_ts="1732439773">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="numToMors_tb_beh.prj"/>
       <outfile xil_pn:name="numToMors_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1732126869" xil_pn:in_ck="-3076711811498858920" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1006946302764924226" xil_pn:start_ts="1732126869">
+    <transform xil_pn:end_ts="1732439776" xil_pn:in_ck="-3076711811498858920" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1006946302764924226" xil_pn:start_ts="1732439776">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="numToMors_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1732114387" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1732114387">
@@ -125,14 +120,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1732125961" xil_pn:in_ck="174060857044946968" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="5437279653159584353" xil_pn:start_ts="1732125953">
+    <transform xil_pn:end_ts="1732439768" xil_pn:in_ck="174060857044946968" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="5437279653159584353" xil_pn:start_ts="1732439756">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="numToMors.lso"/>
       <outfile xil_pn:name="numToMors.ngc"/>
@@ -141,7 +132,6 @@
       <outfile xil_pn:name="numToMors.stx"/>
       <outfile xil_pn:name="numToMors.syr"/>
       <outfile xil_pn:name="numToMors.xst"/>
-      <outfile xil_pn:name="numToMors_tb_beh.prj"/>
       <outfile xil_pn:name="numToMors_tb_stx_beh.prj"/>
       <outfile xil_pn:name="numToMors_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
