@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-12-06T20:39:22</DateModified>
+  <DateModified>2024-12-06T21:23:10</DateModified>
   <ModuleName>morsToNum</ModuleName>
-  <SummaryTimeStamp>2024-12-06T20:24:38</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-12-06T21:17:08</SummaryTimeStamp>
   <SavedFilePath>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/morsToNum/iseconfig/morsToNum.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/morsToNum</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/ideapad 5 pro/Documents/uni/FPGA/verilog/code/morsToNum\</ImplementationReportsDirectory>
   <DateInitialized>2024-12-06T19:29:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

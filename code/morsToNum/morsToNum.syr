@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Reading design: morsToNum.prj
 
@@ -107,17 +107,16 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" into library work
 Parsing module <morsToNum>.
-WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 76: Concatenation with unsized literal; will interpret as 32 bits
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:327 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 76: Concatenation with unsized literal; will interpret as 32 bits
 
 Elaborating module <morsToNum>.
 WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 43: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 57: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 76: Result of 36-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 55: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 32: Assignment to zeroFlag ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v" Line 21: Empty module <morsToNum> remains a black box.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -125,35 +124,17 @@ WARNING:HDLCompiler:413 - "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\cod
 
 Synthesizing Unit <morsToNum>.
     Related source file is "C:\Users\ideapad 5 pro\Documents\uni\FPGA\verilog\code\morsToNum\morsToNum.v".
-    Found 4-bit register for signal <counterZero>.
-    Found 1-bit register for signal <zeroFlag>.
-    Found 1-bit register for signal <oneFlag>.
-    Found 5-bit register for signal <morsNum>.
-    Found 4-bit register for signal <num>.
-    Found 2-bit register for signal <counterOne>.
-    Found 2-bit adder for signal <counterOne[1]_GND_1_o_add_3_OUT> created at line 43.
-    Found 4-bit adder for signal <counterZero[3]_GND_1_o_add_7_OUT> created at line 57.
+WARNING:Xst:647 - Input <mors> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  17 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	no macro.
 Unit <morsToNum> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
-Macro Statistics
-# Adders/Subtractors                                   : 2
- 2-bit adder                                           : 1
- 4-bit adder                                           : 1
-# Registers                                            : 6
- 1-bit register                                        : 2
- 2-bit register                                        : 1
- 4-bit register                                        : 2
- 5-bit register                                        : 1
-# Multiplexers                                         : 1
- 1-bit 2-to-1 multiplexer                              : 1
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -161,21 +142,10 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <morsToNum>.
-The following registers are absorbed into counter <counterZero>: 1 register on signal <counterZero>.
-The following registers are absorbed into counter <counterOne>: 1 register on signal <counterOne>.
-Unit <morsToNum> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
-Macro Statistics
-# Counters                                             : 2
- 2-bit up counter                                      : 1
- 4-bit up counter                                      : 1
-# Registers                                            : 11
- Flip-Flops                                            : 11
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -183,13 +153,6 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <morsToNum> ...
-WARNING:Xst:1710 - FF/Latch <morsNum_1> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <num_1> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <num_3> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <morsNum_2> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <morsNum_3> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <morsNum_4> (without init value) has a constant value of 0 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <num_2> (without init value) has a constant value of 1 in block <morsToNum>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -200,10 +163,7 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 10
- Flip-Flops                                            : 10
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -225,24 +185,6 @@ Top Level Output File Name         : morsToNum.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 16
-#      GND                         : 1
-#      INV                         : 4
-#      LUT2                        : 4
-#      LUT3                        : 2
-#      LUT4                        : 2
-#      LUT5                        : 1
-#      LUT6                        : 1
-#      VCC                         : 1
-# FlipFlops/Latches                : 10
-#      FD                          : 3
-#      FDR                         : 1
-#      FDRE                        : 6
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 6
-#      IBUF                        : 2
-#      OBUF                        : 4
 
 Device utilization summary:
 ---------------------------
@@ -251,23 +193,19 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              10  out of  126800     0%  
- Number of Slice LUTs:                   14  out of  63400     0%  
-    Number used as Logic:                14  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     14
-   Number with an unused Flip Flop:       4  out of     14    28%  
-   Number with an unused LUT:             0  out of     14     0%  
-   Number of fully used LUT-FF pairs:    10  out of     14    71%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                           7
- Number of bonded IOBs:                   7  out of    210     3%  
+ Number of bonded IOBs:                   0  out of    210     0%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
 
 ---------------------------
 Partition Resource Summary:
@@ -287,11 +225,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 10    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -301,9 +235,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.154ns (Maximum Frequency: 866.927MHz)
-   Minimum input arrival time before clock: 1.148ns
-   Maximum output required time after clock: 0.645ns
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -311,90 +245,21 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.154ns (frequency: 866.927MHz)
-  Total number of paths / destination ports: 27 / 10
--------------------------------------------------------------------------
-Delay:               1.154ns (Levels of Logic = 1)
-  Source:            counterZero_3 (FF)
-  Destination:       zeroFlag (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
-
-  Data Path: counterZero_3 to zeroFlag
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q             2   0.361   0.688  counterZero_3 (counterZero_3)
-     LUT6:I1->O            1   0.097   0.000  zeroFlag_glue_set (zeroFlag_glue_set)
-     FDR:D                     0.008          zeroFlag
-    ----------------------------------------
-    Total                      1.154ns (0.466ns logic, 0.688ns route)
-                                       (40.4% logic, 59.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 23 / 16
--------------------------------------------------------------------------
-Offset:              1.148ns (Levels of Logic = 2)
-  Source:            mors (PAD)
-  Destination:       counterZero_0 (FF)
-  Destination Clock: clk rising
-
-  Data Path: mors to counterZero_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             7   0.001   0.407  mors_IBUF (mors_IBUF)
-     LUT2:I0->O            4   0.097   0.293  Mcount_counterZero_val1 (Mcount_counterZero_val)
-     FDRE:R                    0.349          counterZero_0
-    ----------------------------------------
-    Total                      1.148ns (0.447ns logic, 0.701ns route)
-                                       (39.0% logic, 61.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              0.645ns (Levels of Logic = 1)
-  Source:            num_0 (FF)
-  Destination:       num<0> (PAD)
-  Source Clock:      clk rising
-
-  Data Path: num_0 to num<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.361   0.283  num_0 (num_0)
-     OBUF:I->O                 0.000          num_0_OBUF (num<0>)
-    ----------------------------------------
-    Total                      0.645ns (0.361ns logic, 0.283ns route)
-                                       (56.0% logic, 44.0% route)
-
-=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
-
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    1.154|         |         |         |
----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.88 secs
+Total CPU time to Xst completion: 6.49 secs
  
 --> 
 
-Total memory usage is 4619620 kilobytes
+Total memory usage is 4619596 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

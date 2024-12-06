@@ -8,11 +8,3 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# restart
-# run 10.00us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# run 10.00us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.

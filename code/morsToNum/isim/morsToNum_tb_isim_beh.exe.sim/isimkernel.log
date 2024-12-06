@@ -2,14 +2,14 @@ Command line:
    morsToNum_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  3525
+     -socket  4045
 
-Fri Dec 06 20:44:17 2024
+Fri Dec 06 22:03:17 2024
 
 
- Elaboration Time: 0.046875 sec
+ Elaboration Time: 0.078125 sec
 
- Current Memory Usage: 5155.52 Meg
+ Current Memory Usage: 5155.5 Meg
 
  Total Signals          : 17
  Total Nets             : 20
@@ -20,9 +20,9 @@ Fri Dec 06 20:44:17 2024
  Total Traceable Variables  : 27
  Total Scalar Nets and Variables : 120
 
- Total Simulation Time: 0.09375 sec
+ Total Simulation Time: 0.078125 sec
 
- Current Memory Usage: 4683.66 Meg
+ Current Memory Usage: 5155.5 Meg
 
-Fri Dec 06 20:48:02 2024
+Fri Dec 06 22:03:41 2024
 

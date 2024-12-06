@@ -61,6 +61,10 @@ module morsToNum_tb;
 		#160;
 		mors = 0;
 		#120;
+//		mors = 1;
+//		#600;
+//		mors = 0;
+//		#120;
 	end
 endmodule
 

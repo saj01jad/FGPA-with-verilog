@@ -30,7 +30,7 @@ reg zeroFlag;
 reg oneFlag;
 reg [4:0] morsNum;
 always @ (posedge clk)
-	if (rst == 0)
+	if (rst == 1)
 		begin
 		counterOne <= 0;
 		counterZero <= 0;
@@ -44,13 +44,11 @@ always @ (posedge clk)
 			counterZero <= 0;
 			zeroFlag <= 0;
 			if (counterOne == 1)
-				begin
 				oneFlag <= 1;
-				end
 			else if (counterOne == 3)
-				begin
 				oneFlag <= 1;
-				end
+			else 
+				oneFlag <= 0;
 			end
 		else if (mors == 0)
 			begin
@@ -58,9 +56,7 @@ always @ (posedge clk)
 			counterOne <= 0;
 			oneFlag <= 0;
 			if (counterZero == 3)
-				begin
 				zeroFlag <= 1;
-				end
 //			else if (counterZero == 7)
 //				begin
 //				zeroFlag <= 1;
